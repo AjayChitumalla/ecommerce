@@ -1,0 +1,41 @@
+<h4>Add Product</h4>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="mx-auto app-login-box col-md-8">
+    <div class="modal-dialog w-100">
+      <div class="modal-content">
+        <div class="modal-body">
+          <flash-messages></flash-messages>
+          <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                class="form-group">
+            <div>Name<span style="color:red">*</span><br><input id="exampleInput1" type="text" placeholder="Enter Name..." required="required"
+                        aria-required="true" class="form-control"
+                        aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="name" name="name">
+            </div>
+          </div>
+          <div id="exampleInputGroup12" role="group" class="form-group">
+            <div>Description<span style="color:red">*</span><br><textarea id="exampleInput12" required="required"
+                        aria-required="true" class="form-control" [(ngModel)]="desc" name="desc"></textarea></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div id="exampleInputGroup2" role="group" class="form-group">
+                <div>Category<span style="color:red">*</span><br><input id="exampleInput2" type="text" required="required"
+                            aria-required="true" class="form-control" [(ngModel)]="cat" name="cat"></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div id="exampleInputGroup2" role="group" class="form-group">
+                <div>Price<span style="color:red">*</span><br><input id="exampleInput2" type="number" required="required"
+                            aria-required="true" class="form-control" [(ngModel)]="price" name="price"></div>
+              </div>
+            </div>
+          </div>
+          Image<span style="color:red">*</span><br><input type="file" name="img" (change)='selectImg($event)'>
+        <div class="modal-footer d-block text-center">
+          <button  type="button" class="btn btn-wide btn-pill btn-success btn-hover-shine btn-secondary btn-lg" [disabled]="!valid()" (click)="imgsub();sub()">Add Product
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
