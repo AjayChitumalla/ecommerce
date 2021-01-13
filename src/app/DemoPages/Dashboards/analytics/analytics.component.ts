@@ -154,9 +154,13 @@ export class AnalyticsComponent implements OnInit {
   };
   constructor(public data:DataService) { }
   products;
+  customers;
   ngOnInit() {
     this.data.getProducts().subscribe(d=>{
       this.products=d;
+    })
+    this.data.getCustomers().subscribe(d=>{
+      this.customers=d;
     })
   }
 

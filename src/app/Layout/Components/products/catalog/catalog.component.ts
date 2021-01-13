@@ -12,6 +12,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class CatalogComponent implements OnInit {
   products;
   form:FormGroup;
+  pageSize=20;
+  page=1;
   constructor(public data:DataService,private route:Router,private fb:FormBuilder,public flashMessage:FlashMessagesService) { 
     this.form = this.fb.group({
       checkArray: this.fb.array([])

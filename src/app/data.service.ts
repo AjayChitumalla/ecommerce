@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   serverUrl="http://localhost:3000";
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private route:Router) { }
   getProducts(){
     return this.http.get(this.serverUrl+'/products');
   }
@@ -21,10 +22,39 @@ export class DataService {
   getproduct(id){
     return this.http.get(this.serverUrl+'/products/'+id);
   }
+  getCustomers(){
+    return this.http.get(this.serverUrl+'/users');
+  }
   editfile(formdata,id){
     return this.http.post(this.serverUrl+'/products/file',formdata);
   }
   editprod(name,desc,cat,price,img,id){
     return this.http.put(this.serverUrl+'/products/'+id,{name,desc,cat,price,img});
+  }
+  signup(firstname,lastname,username,password){
+    return this.http.post(this.serverUrl+'/users/signup',{firstname,lastname,username,password});
+  }
+  login(username,password){
+    return this.http.post(this.serverUrl+'/users/login',{username,password},{observe:'response'});
+  }
+  reset(username){
+    return this.http.post(this.serverUrl+'/users/reset',{username});
+  }
+  newpassword(password,id){
+    return this.http.post(this.serverUrl+'/users/newpassword',{password,id});
+  }
+  test(){
+    var payload = localStorage.getItem('uid');
+    return this.http.post(this.serverUrl+'/test',{payload});
+  }
+  loggedIn(){
+    return !!localStorage.getItem('uid');
+  }
+  getToken(){
+    return localStorage.getItem('uid');
+  }
+  logout(){
+    localStorage.removeItem('uid');
+    this.route.navigate(['/']);
   }
 }

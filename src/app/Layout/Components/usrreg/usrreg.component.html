@@ -1,0 +1,50 @@
+<div class="h-100 bg-plum-plate bg-animation">
+  <div class="d-flex h-100 justify-content-center align-items-center">
+    <div class="mx-auto app-login-box col-md-8">
+      <flash-messages></flash-messages>
+      <div class="modal-dialog w-100">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h5 class="modal-title">
+              <h4 class="mt-2">
+                <div>Welcome</div>
+              </h4>
+            </h5>
+            <div class="divider"></div>
+            <flash-messages></flash-messages>
+            <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                 class="form-group">
+              <div><input id="exampleInput1" type="email" placeholder="Enter email..." required="required"
+                          aria-required="true" class="form-control"
+                          aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="email" name="email">
+              </div>
+            </div>
+            <div id="exampleInputGroup12" role="group" class="form-group">
+              <div><input id="exampleInput12" type="text" placeholder="Enter firstname..." required="required"
+                          aria-required="true" class="form-control" [(ngModel)]="firstname"></div>
+            </div>
+            <div id="exampleInputGroup12" role="group" class="form-group">
+              <div><input id="exampleInput12" type="text" placeholder="Enter lastname..." required="required"
+                          aria-required="true" class="form-control" [(ngModel)]="lastname"></div>
+            </div>
+            <div id="exampleInputGroup2" role="group" class="form-group">
+              <div><input id="exampleInput2" type="password" placeholder="Enter password..." required="required"
+                          aria-required="true" class="form-control" [(ngModel)]="password"></div>
+            </div>
+                <div class="divider"></div>
+            <h6 class="mb-0">
+              Already have an account?
+              <a routerLink="/login" class="text-primary">Sign in</a>
+              |
+              <a routerLink="/admin/pages/forgot-password-boxed" class="text-primary">Recover
+                Password</a></h6></div>
+          <div class="modal-footer d-block text-center">
+            <button  type="submit" [disabled]="!valid()" (click)="onsubmit()"
+                    class="btn btn-wide btn-pill btn-shadow btn-hover-shine btn-secondary btn-lg">Create Account
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

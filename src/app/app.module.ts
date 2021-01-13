@@ -10,7 +10,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import {CommonModule} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AppComponent} from './app.component';
 
 // BOOTSTRAP COMPONENTS
@@ -106,6 +106,13 @@ import {PieChartComponent} from './DemoPages/Charts/chartjs/examples/pie-chart/p
 import { CatalogComponent } from './Layout/Components/products/catalog/catalog.component';
 import { NewproductComponent } from './Layout/Components/products/newproduct/newproduct.component';
 import { EditproductComponent } from './Layout/Components/products/editproduct/editproduct.component';
+import { LandingComponent } from './Layout/Components/landing/landing.component';
+import { UsrregComponent } from './layout/components/usrreg/usrreg.component';
+import { UserloginComponent } from './Layout/Components/userlogin/userlogin.component';
+import { ResetComponent } from './Layout/Components/reset/reset.component';
+import { DataService } from './data.service';
+import { AuthGuardService } from './auth-guard.service';
+import { TokenService } from './token.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -198,7 +205,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ScatterChartComponent,
     CatalogComponent,
     NewproductComponent,
-    EditproductComponent
+    EditproductComponent,
+    LandingComponent,
+    UsrregComponent,
+    UserloginComponent,
+    ResetComponent,
   ],
   imports: [
     BrowserModule,
@@ -222,7 +233,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ChartsModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [
+  providers: [DataService,AuthGuardService,TokenService,
     {
       provide:
       PERFECT_SCROLLBAR_CONFIG,
@@ -230,6 +241,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useValue:
       DEFAULT_PERFECT_SCROLLBAR_CONFIG,
       // DEFAULT_DROPZONE_CONFIG,
+    },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenService,
+      multi:true
     },
     ConfigActions,
   ],

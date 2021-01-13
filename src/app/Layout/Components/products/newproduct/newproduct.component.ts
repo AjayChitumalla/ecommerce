@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-newproduct',
@@ -34,9 +35,19 @@ export class NewproductComponent implements OnInit {
   showflash(){
     this.flashMessage.show("Product added Successfully!",{cssClass:'alert-success',timeout:3000});
   }
+  showerr(e){
+    this.flashMessage.show(e.msg,{cssClass:'alert-danger',timeout:3000});
+  }
   sub(){
     this.data.addprod(this.name,this.desc,this.cat,this.price,this.image.name).subscribe(d=>{
       this.showflash();
+    },
+    err=>{
+      if(err instanceof HttpErrorResponse){
+        if(err.status === 403){
+          this.showerr(err.error);
+        }
+      }
     })
   }
   valid(){

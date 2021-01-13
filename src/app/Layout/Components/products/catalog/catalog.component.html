@@ -1,6 +1,12 @@
 <h4>Products</h4>
 <span style="float: right;"><button class="btn btn-primary btn-lg" (click)="nav()">Add Product</button></span>
 <flash-messages></flash-messages>
+<span>Show  <select [(ngModel)]="pageSize">
+  <option value="20" selected>20</option>
+  <option value="50">50</option>
+  <option value="100">100</option>
+  <option value="200">200</option>
+</select></span>&nbsp; entries
 <button class="btn btn-warning" type="submit" [disabled]="!this.form.value.checkArray.length" (click)="submitForm()">Delete</button>
 <table class="table table-striped table-hover">
     <thead>
@@ -13,8 +19,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let p of products; index as i" style="cursor: pointer;">
-      <input type="checkbox" style="margin-top: 10px;margin-left: 15px;" value="{{p._id}}" (change)="onCheckboxChange($event)">
+    <tr *ngFor="let p of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; index as i" style="cursor: pointer;">
+      <input type="checkbox" style="margin-top: 10px;margin-left: 15px;cursor: pointer;" value="{{p._id}}" (change)="onCheckboxChange($event)">
       <th (click)="edit(p._id)" scope="row">{{ i + 1 }}</th>
       <td (click)="edit(p._id)">
         <img src="{{this.data.serverUrl}}/images/{{p.Image}}" class="mr-2"
@@ -25,3 +31,4 @@
     </tr>
     </tbody>
 </table>
+<ngb-pagination [collectionSize]=products.length [(page)]=page [pageSize]=pageSize aria-label="Default pagination"></ngb-pagination>
