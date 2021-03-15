@@ -107,7 +107,7 @@ import { CatalogComponent } from './Layout/Components/products/catalog/catalog.c
 import { NewproductComponent } from './Layout/Components/products/newproduct/newproduct.component';
 import { EditproductComponent } from './Layout/Components/products/editproduct/editproduct.component';
 import { LandingComponent } from './Layout/Components/landing/landing.component';
-import { UsrregComponent } from './layout/components/usrreg/usrreg.component';
+import { UsrregComponent } from './Layout/Components/usrreg/usrreg.component';
 import { UserloginComponent } from './Layout/Components/userlogin/userlogin.component';
 import { ResetComponent } from './Layout/Components/reset/reset.component';
 import { DataService } from './data.service';
