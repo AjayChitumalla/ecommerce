@@ -1,0 +1,45 @@
+<app-fheader></app-fheader>
+<section class="shopping-cart spad">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8">
+              <div class="shopping__cart__table">
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Product</th>
+                              <th>Quantity</th>
+                              <th>Total</th>
+                              <th>Time</th>
+                              <th></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let p of cartItems;index as i">
+                              <td class="product__cart__item">
+                                  <div class="product__cart__item__pic">
+                                      <img [src]="url[i]" width="90px" height="90px">
+                                  </div>
+                                  <div class="product__cart__item__text">
+                                      <h6>{{p.Name}}</h6>
+                                      <h5>Rs.{{p.Price}}</h5>
+                                  </div>
+                              </td>
+                              <td class="quantity__item">
+                                  <div class="quantity">
+                                      <div class="pro-qty">
+                                          <span>{{p.quantity}}</span>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="cart__price" [id]="'value'+i">Rs.{{p.Price*p.quantity}}</td>
+                              <td>{{p.Time}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<app-ffooter></app-ffooter>

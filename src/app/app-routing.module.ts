@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, Component} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {BaseLayoutComponent} from './Layout/base-layout/base-layout.component';
@@ -59,6 +59,11 @@ import { UsrregComponent } from './layout/components/usrreg/usrreg.component';
 import { UserloginComponent } from './Layout/Components/userlogin/userlogin.component';
 import { ResetComponent } from './Layout/Components/reset/reset.component';
 import { AuthGuardService } from './auth-guard.service'
+import { CartComponent } from './Layout/Components/cart/cart.component';
+import { CheckoutComponent } from './Layout/Components/checkout/checkout.component';
+import { MyordersComponent } from './Layout/Components/myorders/myorders.component';
+import { AboutusComponent } from './Layout/Components/aboutus/aboutus.component';
+import { UserproductComponent } from './Layout/Components/userproduct/userproduct.component';
 
 const routes: Routes = [
   {path:'admin/login',component:LoginBoxedComponent},
@@ -127,6 +132,11 @@ const routes: Routes = [
   {path : 'login', component: UserloginComponent},
   {path : 'reset/:id',component: ResetComponent},
   {path : 'abc', component: ResetComponent, canActivate: [AuthGuardService]},
+  {path : 'cart', component: CartComponent},
+  {path : 'checkout', component: CheckoutComponent},
+  {path : 'myorders', component: MyordersComponent},
+  {path : 'aboutus', component: AboutusComponent},
+  {path : 'products', component: UserproductComponent},
   {path: '**', redirectTo: ''}
 ];
 

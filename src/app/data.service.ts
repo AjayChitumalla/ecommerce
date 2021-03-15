@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class DataService {
-  serverUrl="http://localhost:3000";
+  serverUrl="http://wowmom-be.herokuapp.com";
   constructor(private http:HttpClient,private route:Router) { }
   getProducts(){
     return this.http.get(this.serverUrl+'/products');
@@ -56,5 +56,11 @@ export class DataService {
   logout(){
     localStorage.removeItem('uid');
     this.route.navigate(['/']);
+  }
+  getuser(uid){
+    return this.http.get(this.serverUrl+'/users/'+uid);
+  }
+  updateuser(uid,add,items){
+    return this.http.post(this.serverUrl+'/users/order',{uid,add,items});
   }
 }

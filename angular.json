@@ -26,7 +26,8 @@
               "src/favicon.ico",
               "src/assets/images",
               "src",
-              "src/assets"
+              "src/assets",
+              "src/js"
             ],
             "styles": [
               "src/styles.scss",

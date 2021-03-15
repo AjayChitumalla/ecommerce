@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <app-fheader></app-fheader>
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="breadcrumb__text">
+                        <h2>Checkout</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="breadcrumb__links">
+                        <a routerLink=''>Home</a>
+                        <span>Checkout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="checkout__form">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <h6 class="checkout__title">Billing Details</h6>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Fist Name<span>*</span></p>
+                                        <input type="text" [(ngModel)]="address['firstname']" name='firstname'>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Last Name<span>*</span></p>
+                                        <input type="text" [(ngModel)]="address['lastname']" name="lastname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout__input">
+                                <p>H.No/Apartment/Street<span>*</span></p>
+                                <input type="text" [(ngModel)]="address['street']" name="street" class="checkout__input__add">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Town/City<span>*</span></p>
+                                <input type="text" [(ngModel)]="address['city']" name='city'>
+                            </div>
+                            <div class="checkout__input">
+                                <p>State<span>*</span></p>
+                                <input type="text" [(ngModel)]="address['state']" name="state">
+                            </div>
+                            <div class="checkout__input">
+                                <p>Postcode / ZIP<span>*</span></p>
+                                <input type="number" [(ngModel)]="address['pin']" name='pin'>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>Phone<span>*</span></p>
+                                        <input type="number" [(ngModel)]="address['phone']" name="phone">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="checkout__order">
+                                <h6 class="order__title">Your order</h6>
+                                <div class="checkout__order__products">Product <span>Total</span></div>
+                                <ul *ngFor="let p of cartItems" class="checkout__total__products">
+                                    <li type="1"> {{p.Name}} <span>Rs. {{p.quantity*p.Price}}</span></li>
+                                </ul>
+                                <ul class="checkout__total__all">
+                                    <li>Total <span>Rs. {{sum}}</span></li>
+                                </ul>
+                                <button type="submit" (click)='update()' [disabled]="!valid()" class="site-btn">PLACE ORDER</button>
+                                <flash-messages></flash-messages>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+    <app-ffooter></app-ffooter>
+</html>

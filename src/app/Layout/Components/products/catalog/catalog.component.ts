@@ -45,8 +45,8 @@ export class CatalogComponent implements OnInit {
     this.route.navigate(['/admin/newproduct']);
   }
   showflash(){
-    this.flashMessage.show("Products removed successfully",{cssClass:"alert-success",timeout:500})
     window.location.reload();
+    this.flashMessage.show("Products removed successfully",{cssClass:"alert-success",timeout:500})
   }
   edit(id){
     this.route.navigate(['/admin/products/'+id]);

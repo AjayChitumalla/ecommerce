@@ -113,6 +113,13 @@ import { ResetComponent } from './Layout/Components/reset/reset.component';
 import { DataService } from './data.service';
 import { AuthGuardService } from './auth-guard.service';
 import { TokenService } from './token.service';
+import { FheaderComponent } from './Layout/Components/fheader/fheader.component';
+import { FfooterComponent } from './Layout/Components/ffooter/ffooter.component';
+import { CartComponent } from './Layout/Components/cart/cart.component';
+import { CheckoutComponent } from './Layout/Components/checkout/checkout.component';
+import { MyordersComponent } from './Layout/Components/myorders/myorders.component';
+import { AboutusComponent } from './Layout/Components/aboutus/aboutus.component';
+import { UserproductComponent } from './Layout/Components/userproduct/userproduct.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -210,6 +217,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UsrregComponent,
     UserloginComponent,
     ResetComponent,
+    FheaderComponent,
+    FfooterComponent,
+    CartComponent,
+    CheckoutComponent,
+    MyordersComponent,
+    AboutusComponent,
+    UserproductComponent,
   ],
   imports: [
     BrowserModule,

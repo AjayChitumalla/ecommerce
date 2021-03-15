@@ -1,7 +1,7 @@
 <div [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" (mouseover)="sidebarHover()"
      (mouseout)="sidebarHover()">
   <div class="app-header__logo">
-    <div>E-Commerce</div>
+    <div>WoW MoM</div>
     <div class="header__pane ml-auto">
       <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
               [ngClass]="{'is-active' : globals.toggleSidebar}" (click)="toggleSidebar()">
@@ -54,21 +54,13 @@
                     <div class="vsm-list">
                       <div class="vsm-item">
                         <a routerLinkActive="active-item" routerLink="/admin/catalog" class="vsm-link"><span
-                          class="vsm-title">Catalog</span></a>
-                      </div>
-                      <div class="vsm-item">
-                        <a routerLinkActive="active-item" routerLink="/admin/pages/register-boxed" class="vsm-link"><span
-                          class="vsm-title">Register Boxed</span></a>
-                      </div>
-                      <div class="vsm-item">
-                        <a routerLinkActive="active-item" routerLink="/admin/pages/forgot-password-boxed"
-                           class="vsm-link"><span class="vsm-title">Forgot Password Boxed</span></a>
+                          class="vsm-title">Catalogue</span></a>
                       </div>
                     </div>
                   </div>
                 </ng-template>
               </ngb-panel>
-              <ngb-panel>
+              <!-- <ngb-panel>
                 <ng-template ngbPanelHeader>
                   <div class="vsm-header">Bootstrap Components</div>
                 </ng-template>
@@ -112,8 +104,8 @@
                     </div>
                   </div>
                 </ng-template>
-              </ngb-panel>
-              <ngb-panel id="componentsMenu">
+              </ngb-panel> -->
+              <!-- <ngb-panel id="componentsMenu">
                 <ng-template ngbPanelHeader>
                   <button ngbPanelToggle class="vsm-link">
                     <i class="vsm-icon pe-7s-car"></i>
@@ -156,8 +148,8 @@
                     </div>
                   </div>
                 </ng-template>
-              </ngb-panel>
-              <ngb-panel id="formElementsMenu">
+              </ngb-panel> -->
+              <!-- <ngb-panel id="formElementsMenu">
                 <ng-template ngbPanelHeader>
                   <button ngbPanelToggle class="vsm-link">
                     <i class="vsm-icon pe-7s-helm"></i>
@@ -179,8 +171,8 @@
                     </div>
                   </div>
                 </ng-template>
-              </ngb-panel>
-              <ngb-panel id="tablesMenu">
+              </ngb-panel> -->
+              <!-- <ngb-panel id="tablesMenu">
                 <ng-template ngbPanelHeader>
                   <button ngbPanelToggle class="vsm-link">
                     <i class="vsm-icon pe-7s-safe"></i>
@@ -198,13 +190,13 @@
                     </div>
                   </div>
                 </ng-template>
-              </ngb-panel>
-              <ngb-panel>
+              </ngb-panel> -->
+              <!-- <ngb-panel>
                 <ng-template ngbPanelHeader>
                   <div class="vsm-header">Dashboard Boxes</div>
                 </ng-template>
-              </ngb-panel>
-              <ngb-panel id="pagesMenu3">
+              </ngb-panel> -->
+              <!-- <ngb-panel id="pagesMenu3">
                 <ng-template ngbPanelHeader>
                   <button ngbPanelToggle class="vsm-link">
                     <i class="vsm-icon pe-7s-graph2"></i>
@@ -222,16 +214,16 @@
                     </div>
                   </div>
                 </ng-template>
-              </ngb-panel>
+              </ngb-panel> -->
             </ngb-accordion>
-            <div class="vsm-header">Charts</div>
+            <!-- <div class="vsm-header">Charts</div>
             <div class="vsm-item">
               <a routerLink="/admin/charts/chartjs" routerLinkActive="active-item" class="vsm-link">
                 <i class="vsm-icon pe-7s-graph2"></i>
                 <span class="vsm-title">ChartJS</span>
               </a>
-            </div>
-          </div>
+            </div> -->
+          </div> 
         </div>
       </perfect-scrollbar>
     </div>

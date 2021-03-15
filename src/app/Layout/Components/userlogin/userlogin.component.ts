@@ -30,7 +30,7 @@ export class UserloginComponent implements OnInit {
     this.data.login(this.email,this.password).subscribe(d=>{
       this.showflash(d.body);
       localStorage.setItem('uid',d.body['token']);
-      this.route.navigate(['/home']);
+      this.route.navigate(['/checkout']);
     },
     err=>{
       if(err instanceof HttpErrorResponse){

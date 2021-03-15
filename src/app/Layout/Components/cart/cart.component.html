@@ -1,0 +1,95 @@
+<app-fheader></app-fheader>
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="breadcrumb__text">
+                        <h2>Shopping cart</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="breadcrumb__links">
+                        <a routerLink=''>Home</a>
+                        <span>Shopping cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Shopping Cart Section Begin -->
+    <section class="shopping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="shopping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of cartItems;index as i">
+                                    <td class="product__cart__item">
+                                        <div class="product__cart__item__pic">
+                                            <img [src]="url[i]" width="90px" height="90px">
+                                        </div>
+                                        <div class="product__cart__item__text">
+                                            <h6>{{p.Name}}</h6>
+                                            <h5>Rs.{{p.Price}}</h5>
+                                        </div>
+                                    </td>
+                                    <td class="quantity__item">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                            <span class="dec qtybtn" (click)="dec(i)" style="cursor:pointer">-</span>
+                                                <input type="text" oninput='this.value=this.value.replace(/[^0-9]/g,"");' (keyup)="changed(i)" value="1" [id]="'count'+i">
+                                                <span class="inc qtybtn" (click)="add(i)" style="cursor:pointer">+</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="cart__price" [id]="'value'+i">Rs.{{p.Price}}</td>
+                                    <td class="cart__close"><span (click)="remove(i)" class="icon_close" style="cursor:pointer"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn">
+                                <a routerLink=''>Continue Shopping</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="continue__btn update__btn">
+                                <a (click)='check()' style="cursor: pointer;color: white;"> Proceed to checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cart__discount">
+                        <h6>Discount codes</h6>
+                        <form action="#">
+                            <input type="text" placeholder="Coupon code">
+                            <button type="submit">Apply</button>
+                        </form>
+                    </div>
+                    <div class="cart__total">
+                        <h6>Cart total</h6>
+                        <ul>
+                            <li>Total <span id='tot'>Rs.{{sum}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shopping Cart Section End -->
+<app-ffooter></app-ffooter>

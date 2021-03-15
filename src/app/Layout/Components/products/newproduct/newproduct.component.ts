@@ -41,6 +41,11 @@ export class NewproductComponent implements OnInit {
   sub(){
     this.data.addprod(this.name,this.desc,this.cat,this.price,this.image.name).subscribe(d=>{
       this.showflash();
+      this.name="";
+      this.price=0;
+      this.desc="";
+      this.image='';
+      this.cat="";
     },
     err=>{
       if(err instanceof HttpErrorResponse){
