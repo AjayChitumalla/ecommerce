@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class DataService {
-  serverUrl="http://wowmom-be.herokuapp.com";
+  serverUrl="http://localhost:3000";
   constructor(private http:HttpClient,private route:Router) { }
   getProducts(){
     return this.http.get(this.serverUrl+'/products');

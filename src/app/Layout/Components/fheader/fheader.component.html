@@ -84,9 +84,9 @@
                   <nav class="header__menu mobile-menu">
                       <ul>
                           <li [ngClass]="home"><a routerLink=''>Home</a></li>
-                          <li [ngClass]="about"><a routerLink="aboutus">About</a></li>
+                          <li [ngClass]="about"><a routerLink="aboutus" style="margin:0">About</a></li>
                           <li><a href="#contact">Contact</a></li>
-                          <li><a routerLink='/myorders' [ngClass]="myorders" [style.display]=this.dis>My Orders</a></li>
+                          <li><a routerLink='/myorders' style="margin:0" [ngClass]="myorders" [style.display]=this.dis>My Orders</a></li>
                       </ul>
                   </nav>
               </div>
