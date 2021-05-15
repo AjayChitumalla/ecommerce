@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
   selector: 'app-reset',
@@ -9,7 +9,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class ResetComponent implements OnInit {
 
-  constructor(public data:DataService,private route:ActivatedRoute,public flashMessage : FlashMessagesService) { }
+  constructor(public data:DataService,private route:ActivatedRoute,public flashMessage : FlashMessagesService,private router:Router) { }
 
   ngOnInit() {
   }
@@ -30,6 +30,7 @@ export class ResetComponent implements OnInit {
   onsubmit(){
     this.data.newpassword(this.password,this.id).subscribe(d=>{
       this.showflash(d);
+      this.router.navigate(['/login']);
     },
     err=>{
         this.showerr(err.error);
