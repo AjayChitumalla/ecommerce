@@ -1,4 +1,5 @@
-<h4>Donate Items</h4>
+<app-fheader></app-fheader>
+<h4 style="margin-left: 500px;margin-top: 20px;">Donate Items</h4>
 <div class="d-flex justify-content-center align-items-center">
   <div class="mx-auto app-login-box col-md-8">
     <div class="modal-dialog w-100">
@@ -7,7 +8,7 @@
           <flash-messages></flash-messages>
           <div id="exampleInputGroup1" role="group" aria-describedby="exampleInputGroup1__BV_description_"
                 class="form-group">
-            <div>Name<span style="color:red">*</span><br><input id="exampleInput1" type="text" placeholder="Enter Name..." required="required"
+            <div>Product Name<span style="color:red">*</span><br><input id="exampleInput1" type="text" required="required"
                         aria-required="true" class="form-control"
                         aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="name" name="name">
             </div>
@@ -36,7 +37,7 @@
           </div>
           Image<span style="color:red">*</span><br><input type="file" name="img" (change)='selectImg($event)'>
         <div class="modal-footer d-block text-center">
-          <button  type="button" class="btn btn-wide btn-pill btn-success btn-hover-shine btn-secondary btn-lg" [disabled]="!valid()" (click)="imgsub();sub()">Add Product
+          <button  type="button" class="btn btn-wide btn-pill btn-success btn-hover-shine btn-secondary btn-lg" [disabled]="!valid()" (click)="imgsub();sub()">Donate
           </button>
         </div>
       </div>
@@ -44,3 +45,4 @@
   </div>
 </div>
 </div>
+<app-ffooter></app-ffooter>

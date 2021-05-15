@@ -155,21 +155,26 @@ export class AnalyticsComponent implements OnInit {
   constructor(public data:DataService) { }
   products;
   customers;
-  orders;
-  sales=0;
+  //orders;
+  donations;
+  //sales=0;
   ngOnInit() {
     this.data.getProducts().subscribe(d=>{
       this.products=d;
     })
     this.data.getCustomers().subscribe(d=>{
       this.customers=d;
-      for(var i=0;i<this.customers.length;i++){
-        for(var j=0;j<this.customers[i]['Items'].length;j++){
-          this.sales+=this.customers[i]['Items'][j]['Price']*this.customers[i]['Items'][j]['quantity'];
-        }
-      }
+      // for(var i=0;i<this.customers.length;i++){
+      //   for(var j=0;j<this.customers[i]['Items'].length;j++){
+      //     this.sales+=this.customers[i]['Items'][j]['Price']*this.customers[i]['Items'][j]['quantity'];
+      //   }
+      // }
     })
-    this.orders=localStorage.getItem('orders');
+    //this.orders=localStorage.getItem('orders');
+    this.data.getReceived().subscribe(d=>{
+      this.donations=d;
+      console.log(d);
+    })
   }
 
 }

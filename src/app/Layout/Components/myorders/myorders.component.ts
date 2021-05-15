@@ -8,20 +8,24 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./myorders.component.sass']
 })
 export class MyordersComponent implements OnInit {
-  cartItems;
+  donations;
   url=[];
   url1;
-  user={};
   constructor(public data:DataService,private domsanitizer:DomSanitizer) { }
 
   ngOnInit() {
-    this.user=JSON.parse(localStorage.getItem('user'));
-    localStorage.setItem('page','myorders');
-    this.cartItems=this.user['Items'];
-    for(var i=0;i<this.cartItems.length;i++){
-      this.url1=this.domsanitizer.bypassSecurityTrustUrl(this.data.serverUrl+'/images/'+this.cartItems[i].Image);
+    localStorage.setItem('page','myDonations');
+    this.data.getuser(localStorage.getItem('uid')).subscribe(d=>{
+      console.log(d,d['Donations']);
+      this.donations=d['Donations'];
+      this.func();
+    })
+  }
+  func(){
+    for(var i=0;i<this.donations.length;i++){
+      this.url1=this.domsanitizer.bypassSecurityTrustUrl(this.data.serverUrl+'/images/'+this.donations[i].Image);
+      console.log(this.url1);
       this.url.push(this.url1);
     }
   }
-
 }

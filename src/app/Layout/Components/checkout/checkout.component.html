@@ -7,14 +7,14 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="breadcrumb__text">
-                        <h2>Checkout</h2>
+                        <h2>Donate</h2>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="breadcrumb__links">
+                    <!-- <div class="breadcrumb__links">
                         <a routerLink=''>Home</a>
                         <span>Checkout</span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 <form>
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                            <h6 class="checkout__title">Billing Details</h6>
+                            <h6 class="checkout__title">Your Address</h6>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6">
+                        <!-- <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
                                 <h6 class="order__title">Your order</h6>
                                 <div class="checkout__order__products">Product <span>Total</span></div>
@@ -81,9 +81,10 @@
                                 <button type="submit" (click)='update()' [disabled]="!valid()" class="site-btn">PLACE ORDER</button>
                                 <flash-messages></flash-messages>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </form>
+                <button type="submit" style="float: right;" (click)='update()' [disabled]="!valid()" class="site-btn">DONATE</button>
             </div>
         </div>
     </section>

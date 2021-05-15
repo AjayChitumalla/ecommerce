@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
     var val = s*this.cartItems[i]['Price'];
     this.cartItems[i]['quantity']=s;
     localStorage.setItem('cart',JSON.stringify(this.cartItems));
-    document.getElementById("value"+j).textContent='Rs.'+val;
+    //document.getElementById("value"+j).textContent='Rs.'+val;
     this.findtotal();
   }
   dec(i){
@@ -59,7 +59,7 @@ export class CartComponent implements OnInit {
     var val = s*this.cartItems[i]['Price'];
     this.cartItems[i]['quantity']=s;
     localStorage.setItem('cart',JSON.stringify(this.cartItems));
-    document.getElementById("value"+j).textContent='Rs.'+val;
+    //document.getElementById("value"+j).textContent='Rs.'+val;
     this.findtotal();
   }
   changed(ind){

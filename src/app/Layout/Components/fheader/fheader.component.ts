@@ -25,9 +25,9 @@ export class FheaderComponent implements OnInit {
       this.about="active";
       if(localStorage.getItem('page')=='products')
       this.products="active";
-      if(localStorage.getItem('page')=='myorders')
+      if(localStorage.getItem('page')=='myDonations')
       this.myorders="active";
-    console.log("loaded");
+    //console.log("loaded");
   }
   loggedIn(){
     return !!localStorage.getItem('uid');
@@ -38,5 +38,6 @@ export class FheaderComponent implements OnInit {
     localStorage.removeItem('sum');
     localStorage.removeItem('cart');
     this.route.navigate(['/']);
+    window.location.reload();
   }
 }

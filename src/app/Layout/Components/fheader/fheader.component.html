@@ -67,11 +67,6 @@
                           <div class="header__logo">
                               <a href="./index.html"><img src="img/logo.jpg" alt="" height='50px' width="150px"></a>
                           </div>
-                          <div class="header__top__right">
-                              <div class="header__top__right__cart">
-                                  <a routerLink='/cart'><i class="fa fa-shopping-cart fa-3x" style="color: orangered;"></i></a>
-                              </div>
-                          </div>
                       </div>
                   </div>
               </div>
@@ -84,9 +79,9 @@
                   <nav class="header__menu mobile-menu">
                       <ul>
                           <li [ngClass]="home"><a routerLink=''>Home</a></li>
-                          <li [ngClass]="about"><a routerLink="aboutus" style="margin:0">About</a></li>
+                          <!-- <li [ngClass]="about"><a routerLink="/aboutus">About</a></li> -->
                           <li><a href="#contact">Contact</a></li>
-                          <li><a routerLink='/myorders' style="margin:0" [ngClass]="myorders" [style.display]=this.dis>My Orders</a></li>
+                          <li [ngClass]="myorders"><a routerLink='/myorders' [style.display]=this.dis>My Donations</a></li>
                       </ul>
                   </nav>
               </div>

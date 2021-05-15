@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -11,7 +12,7 @@ export class LandingComponent implements OnInit {
   url=[];
   url1;
   ord;
-  constructor(public data : DataService,private domsanitizer : DomSanitizer) { }
+  constructor(public data : DataService,private domsanitizer : DomSanitizer,private route:Router) { }
   ngOnInit() {
     this.data.getProducts().subscribe(d=>{
       this.products=d;
@@ -62,6 +63,14 @@ export class LandingComponent implements OnInit {
       else
         x=item['Price'];
       localStorage.setItem('sum',JSON.stringify(x));
+    }
+  }
+  check(){
+    if(localStorage.getItem('uid')){
+      this.route.navigate(['/donate']);
+    }
+    else{
+      this.route.navigate(['/login']);
     }
   }
 }

@@ -13,8 +13,8 @@ export class DataService {
   addfile(formdata){
     return this.http.post(this.serverUrl+'/products/file',formdata);
   }
-  addprod(name,desc,cat,price,img){
-    return this.http.post(this.serverUrl+'/products',{name,desc,cat,price,img});
+  addprod(name,desc,cat,quantity,img){
+    return this.http.post(this.serverUrl+'/products',{name,desc,cat,quantity,img});
   }
   deleteItems(arr){
     return this.http.post(this.serverUrl+'/products/delete',{arr});
@@ -62,5 +62,17 @@ export class DataService {
   }
   updateuser(uid,add,items){
     return this.http.post(this.serverUrl+'/users/order',{uid,add,items});
+  }
+  donate(name,desc,cat,quantity,img){
+    //console.log("called");
+    return this.http.post(this.serverUrl+'/products/donate',{name,desc,cat,quantity,img});
+  }
+  updateDonation(name,product){
+    console.log(name,product);
+    return this.http.post(this.serverUrl+'/users/updateDonation',{name,product});
+  }
+  getReceived(){
+    //console.log('call');
+    return this.http.get(this.serverUrl+'/products/getDonations');
   }
 }

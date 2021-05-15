@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { FlashMessagesService } from 'angular2-flash-messages';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { DataService } from 'src/app/data.service';
 
 @Component({
-  selector: 'app-newproduct',
-  templateUrl: './newproduct.component.html',
-  styleUrls: ['./newproduct.component.sass']
+  selector: 'app-donation',
+  templateUrl: './donation.component.html',
+  styleUrls: ['./donation.component.sass']
 })
-export class NewproductComponent implements OnInit {
+export class DonationComponent implements OnInit {
   image;
   name="";
   quantity;
@@ -39,13 +39,30 @@ export class NewproductComponent implements OnInit {
     this.flashMessage.show(e.msg,{cssClass:'alert-danger',timeout:3000});
   }
   sub(){
-    this.data.addprod(this.name,this.desc,this.cat,this.quantity,this.image.name).subscribe(d=>{
+    this.data.donate(this.name,this.desc,this.cat,this.quantity,this.image.name).subscribe(d=>{
       this.showflash();
+      var product = {
+        Name:this.name,
+        Description:this.desc,
+        Category:this.cat,
+        Quantity:this.quantity,
+        Image:this.image.name,
+        Time:new Date().toLocaleString()
+      }
       this.name="";
       this.quantity=0;
       this.desc="";
       this.image='';
       this.cat="";
+      var user = localStorage.getItem('uid');
+      this.data.updateDonation(user,product).subscribe(d=>{},
+      err=>{
+        if(err instanceof HttpErrorResponse){
+        if(err.status === 403){
+          this.showerr(err.error);
+        }
+      }
+      })
     },
     err=>{
       if(err instanceof HttpErrorResponse){
