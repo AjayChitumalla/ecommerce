@@ -66,6 +66,7 @@ import { AboutusComponent } from './Layout/Components/aboutus/aboutus.component'
 import { UserproductComponent } from './Layout/Components/userproduct/userproduct.component';
 import { DonationComponent } from './Layout/Components/donation/donation.component';
 import { ReceivedComponent } from './Layout/Components/received/received.component';
+import { EditstatusComponent } from './Layout/Components/editstatus/editstatus.component';
 
 const routes: Routes = [
   {path:'admin/login',component:LoginBoxedComponent},
@@ -116,7 +117,8 @@ const routes: Routes = [
       {path:'products/:id',component:EditproductComponent,data:{extraParameter:''}},
       {path:'newproduct',component:NewproductComponent,data:{extraParameter:''}},
       {path:'catalog',component:CatalogComponent,data:{extraParameter:''}},
-      {path:'received',component:ReceivedComponent,data:{extraParameter:''}}
+      {path:'received',component:ReceivedComponent,data:{extraParameter:''}},
+      {path:'editstatus/:id',component:EditstatusComponent,data:{extraParameter:''}}
     ]
 
   },

@@ -19,14 +19,20 @@
           <div class="row">
             <div class="col-md-6">
               <div id="exampleInputGroup2" role="group" class="form-group">
-                <div>Category<span style="color:red">*</span><br><input id="exampleInput2" type="text" required="required"
-                            aria-required="true" class="form-control" [(ngModel)]="cat" name="cat"></div>
+                <div>Category<span style="color:red">*</span><br>
+                  <select id="exampleInput2" [(ngModel)]="cat" required="required"  aria-required="true" class="form-control" name="cat">
+                    <option value="Electronic Item">Electronic Item</option>
+                    <option value="Household Item">Household Item</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Education">Education</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
               <div id="exampleInputGroup2" role="group" class="form-group">
-                <div>Price<span style="color:red">*</span><br><input id="exampleInput2" type="number" required="required"
-                            aria-required="true" class="form-control" [(ngModel)]="price" name="price"></div>
+                <div>Quantity<span style="color:red">*</span><br><input id="exampleInput2" type="text" required="required"
+                            aria-required="true" class="form-control" [(ngModel)]="Quantity" name="Quantity"></div>
               </div>
             </div>
           </div>

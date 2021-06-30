@@ -1,0 +1,34 @@
+<h4>Edit Status</h4>
+<div class="d-flex justify-content-center align-items-center">
+  <div class="mx-auto app-login-box col-md-8">
+    <div class="modal-dialog w-100">
+      <div class="modal-content">
+        <div class="modal-body">
+          <flash-messages></flash-messages>
+          <b>Item Name : </b>{{item.Name}}<br>
+          <b>Category : </b>{{item.Category}}<br>
+          <b>Quantity : </b>{{item.Quantity}}<br>
+          <b>Donor Name : </b>{{item.User.firstname}} {{item.User.lastname}}<br>
+          <b>Donor Address : </b><br>{{item.User.Address.street}}<br>
+          {{item.User.Address.city}}<br>{{item.User.Address.state}}<br>{{item.User.Address.pin}}<br>
+          {{item.User.Address.phone}}<br>
+          <div id="exampleInputGroup2" role="group" class="form-group">
+            <div><b>Status</b><span style="color:red">*</span><br>
+              <select id="exampleInput2" [(ngModel)]="item.Status" style="width: 200px;"  aria-required="true" class="form-control" name="status">
+                <option value="Request Received">Request Received</option>
+                <option value="Yet to be Collected">Yet to be Collected</option>
+                <option value="Items Collected">Items Collected</option>
+                <option value="Yet to be Donated">Yet to be Donated</option>
+                <option value="Donated">Items Donated</option>
+              </select>
+              <div class="modal-footer d-block text-center">
+                <button  type="button" class="btn btn-wide btn-pill btn-success btn-hover-shine btn-secondary btn-lg" (click)="sub()">Update Status
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

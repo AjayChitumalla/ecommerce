@@ -61,18 +61,34 @@ export class DataService {
     return this.http.get(this.serverUrl+'/users/'+uid);
   }
   updateuser(uid,add,items){
+    for(var i=0;i<items.length;i++){
+      items[i]['Quantity']=items[i]['quantity'];
+      console.log(items[i]);
+    }
     return this.http.post(this.serverUrl+'/users/order',{uid,add,items});
   }
-  donate(name,desc,cat,quantity,img){
+  donate(name,desc,cat,quantity,img,Time,user,Status){
     //console.log("called");
-    return this.http.post(this.serverUrl+'/products/donate',{name,desc,cat,quantity,img});
+    return this.http.post(this.serverUrl+'/products/donate',{name,desc,cat,quantity,img,Time,user,Status});
   }
-  updateDonation(name,product){
+  updateDonation(name,product,address){
     console.log(name,product);
-    return this.http.post(this.serverUrl+'/users/updateDonation',{name,product});
+    return this.http.post(this.serverUrl+'/users/updateDonation',{name,product,address});
   }
   getReceived(){
     //console.log('call');
     return this.http.get(this.serverUrl+'/products/getDonations');
+  }
+  getReceivedItem(id){
+    return this.http.get(this.serverUrl+'/products/getDonation/'+id);
+  }
+  updateStatus(Status,id){
+    return this.http.put(this.serverUrl+'/products/status/'+id,{Status});
+  }
+  deleteItem(id){
+    return this.http.delete(this.serverUrl+'/products/delete/'+id);
+  }
+  updateQuantity(id,quantity){
+    return this.http.put(this.serverUrl+'/products/updateQuantity/'+id,{quantity});
   }
 }

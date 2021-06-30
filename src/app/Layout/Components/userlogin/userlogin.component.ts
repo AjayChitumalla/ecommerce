@@ -28,8 +28,9 @@ export class UserloginComponent implements OnInit {
   }
   onsubmit(){
     this.data.login(this.email,this.password).subscribe(d=>{
-      this.showflash(d.body);
-      localStorage.setItem('uid',d.body['token']);
+      console.log(d.body,d.body['token']);
+      localStorage.setItem('user',JSON.stringify(d.body['token']));
+      localStorage.setItem('uid',d.body['token']['_id']);
       this.route.navigate(['/']);
     },
     err=>{

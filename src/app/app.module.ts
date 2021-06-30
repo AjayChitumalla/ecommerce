@@ -122,6 +122,7 @@ import { AboutusComponent } from './Layout/Components/aboutus/aboutus.component'
 import { UserproductComponent } from './Layout/Components/userproduct/userproduct.component';
 import { DonationComponent } from './Layout/Components/donation/donation.component';
 import { ReceivedComponent } from './Layout/Components/received/received.component';
+import { EditstatusComponent } from './Layout/Components/editstatus/editstatus.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -228,6 +229,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     UserproductComponent,
     DonationComponent,
     ReceivedComponent,
+    EditstatusComponent,
   ],
   imports: [
     BrowserModule,

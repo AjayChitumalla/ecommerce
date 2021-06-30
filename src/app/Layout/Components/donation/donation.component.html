@@ -24,6 +24,8 @@
                             aria-required="true" class="form-control" name="cat">
                             <option value="Electronic Item">Electronic Item</option>
                             <option value="Household Item">Household Item</option>
+                            <option value="Clothes">Clothes</option>
+                            <option value="Education">Education</option>
                 </select>
               </div>
             </div>
@@ -36,6 +38,63 @@
             </div>
           </div>
           Image<span style="color:red">*</span><br><input type="file" name="img" (change)='selectImg($event)'>
+          <hr>
+          <div style="margin-left: 150px;"><h4>Your Details</h4></div>
+          <div class="row">
+            <div class="col-md-6">
+              <div id="exampleInputGroup3" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                    class="form-group">
+                <div>First Name<span style="color:red">*</span><br><input id="exampleInput3" type="text" required="required"
+                            aria-required="true" class="form-control"
+                            aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="user['Address']['firstname']" name="name">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div id="exampleInputGroup4" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                    class="form-group">
+                <div>Last Name<span style="color:red">*</span><br><input id="exampleInput4" type="text" required="required"
+                            aria-required="true" class="form-control"
+                            aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="user['Address']['lastname']" name="name">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="exampleInputGroup5" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                    class="form-group">
+                <div>H.No/Apartment/Street<span style="color:red">*</span><br><input id="exampleInput5" type="text" required="required"
+                            aria-required="true" class="form-control"
+                            aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="user['Address']['street']" name="name">
+                </div>
+          </div>
+          <div id="exampleInputGroup6" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                    class="form-group">
+                <div>Town/City<span style="color:red">*</span><br><input id="exampleInput6" type="text" required="required"
+                            aria-required="true" class="form-control"
+                            aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="user['Address']['city']" name="name">
+                </div>
+          </div>
+          <div id="exampleInputGroup7" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                    class="form-group">
+                <div>State<span style="color:red">*</span><br><input id="exampleInput7" type="text" required="required"
+                            aria-required="true" class="form-control"
+                            aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="user['Address']['state']" name="name">
+                </div>
+          </div>
+          <div id="exampleInputGroup8" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                    class="form-group">
+                <div>Postcode / ZIP<span style="color:red">*</span><br><input id="exampleInput8" type="text" required="required"
+                            aria-required="true" class="form-control"
+                            aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="user['Address']['pin']" name="name">
+                </div>
+          </div>
+          <div id="exampleInputGroup9" role="group" aria-describedby="exampleInputGroup1__BV_description_"
+                    class="form-group">
+                <div>Phone<span style="color:red">*</span><br><input id="exampleInput9" type="text" required="required"
+                            aria-required="true" class="form-control"
+                            aria-describedby="exampleInputGroup1__BV_description_" [(ngModel)]="user['Address']['phone']" name="name">
+                </div>
+          </div> 
         <div class="modal-footer d-block text-center">
           <button  type="button" class="btn btn-wide btn-pill btn-success btn-hover-shine btn-secondary btn-lg" [disabled]="!valid()" (click)="imgsub();sub()">Donate
           </button>

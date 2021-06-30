@@ -14,14 +14,14 @@ export class EditproductComponent implements OnInit {
   id;
   name;
   desc;
-  cat;price;img
+  cat;Quantity;img
   ngOnInit() {
     this.id=this.actroute.snapshot.params.id;
     this.data.getproduct(this.id).subscribe(d=>{
       this.name=d['Name'],
       this.desc=d['Description'],
       this.cat=d['Category'],
-      this.price=d['Price'],
+      this.Quantity=d['Quantity'],
       this.img=d['Image']
     })
   }
@@ -40,15 +40,15 @@ export class EditproductComponent implements OnInit {
     })
   }
   showflash(){
-    this.flashMessage.show("Product updated Successfully!",{cssClass:'alert-success',timeout:3000});
+    this.flashMessage.show("Item updated Successfully!",{cssClass:'alert-success',timeout:3000});
   }
   sub(){
-    this.data.editprod(this.name,this.desc,this.cat,this.price,this.img.name,this.id).subscribe(d=>{
+    this.data.editprod(this.name,this.desc,this.cat,this.Quantity,this.img.name,this.id).subscribe(d=>{
       this.showflash();
     })
   }
   valid(){
-    if(this.name!="" && this.price && this.desc!="" && this.img && this.cat!="")
+    if(this.name!="" && this.Quantity && this.desc!="" && this.img && this.cat!="")
     return true;
     return false;
   }
